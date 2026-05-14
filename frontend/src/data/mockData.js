@@ -1,4 +1,4 @@
-// 1. Site & Page Data (Fixes 'siteInfo' and 'artGallery' errors)
+// 1. SITE INFO & NAVIGATION DATA
 export const siteInfo = {
   name: "Pearl of Prespa",
   tagline: "Preserving Nature. Empowering Youth. Reviving Prespa.",
@@ -14,19 +14,29 @@ export const siteInfo = {
   }
 };
 
+export const mission = "We aim to empower and connect local people—especially youth, women, and elderly—through arts, knowledge, creativity, and sustainable practices.";
+
+export const activities = [
+  { id: 1, title: "Eco-Agriculture", description: "Sustainable farming practices.", icon: "Sprout" },
+  { id: 2, title: "Youth Programs", description: "Engaging the next generation.", icon: "Users" },
+  { id: 3, title: "Lake Protection", description: "Preserving the ecosystem.", icon: "Droplet" }
+];
+
+// 2. MISSING EXPORTS (This fixes the 'artGallery' and 'community' errors)
 export const artGallery = [
   { id: 1, title: "Lake Reflections", category: "Photography", image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80" },
   { id: 2, title: "Harvest Colors", category: "Painting", image: "https://images.unsplash.com/photo-1594236053912-70650965e6ea?auto=format&fit=crop&q=80" }
 ];
 
-export const mission = "We aim to empower and connect local people—especially youth, women, and elderly—through arts, knowledge, creativity, and sustainable practices.";
-
-export const activities = [
-  { id: 1, title: "Eco-Agriculture", description: "Sustainable farming practices.", icon: "Sprout" },
-  { id: 2, title: "Youth Programs", description: "Engaging the next generation.", icon: "Users" }
+export const communityStories = [
+  { id: 1, name: "Local Farmer", role: "Agriculture", quote: "Sustainability is the future of Prespa.", image: "https://images.unsplash.com/photo-1594236053912-70650965e6ea?w=400" }
 ];
 
-// 2. Stories from Prespa story.docx
+export const libraryResources = [
+  { id: 1, title: "Eco-Guide", type: "PDF", description: "How to protect the lake." }
+];
+
+// 3. BLOG POSTS (Text from Prespa story.docx)
 export const blogPosts = [
   {
     id: "youth-workshop",
@@ -46,7 +56,7 @@ Through training sessions and field visits, participants learned about organic f
     image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80",
     content: `Recent environmental measurements around Lake Prespa show encouraging signs of improved water quality following months of conservation efforts. Experts reported reduced pollution levels and healthier conditions in several monitored areas.
 
-The progress is largely connected to reduced pesticide use, community cleanup campaigns, and increased environmental awareness among local residents and farmers. Although challenges still remain, local organizations say the improvements prove that community cooperation can create positive environmental change.`
+The progress is largely connected to reduced pesticide use, community cleanup campaigns, and increased environmental awareness among local residents and farmers.`
   },
   {
     id: "apple-harvest",
@@ -54,9 +64,7 @@ The progress is largely connected to reduced pesticide use, community cleanup ca
     date: "March 5, 2025",
     category: "Agriculture",
     image: "https://images.unsplash.com/photo-1594236053912-70650965e6ea?auto=format&fit=crop&q=80",
-    content: `Organic apple farmers in the Prespa region are celebrating a highly successful harvest season after switching to sustainable farming methods. Producers reported strong yields, healthier orchards, and growing demand for locally grown organic apples.
-
-The initiative encouraged farmers to reduce chemical use and adopt environmentally friendly agricultural practices. Many participants say the project has improved both their production quality and long-term economic stability.`
+    content: `Organic apple farmers in the Prespa region are celebrating a highly successful harvest season after switching to sustainable farming methods. Producers reported strong yields, healthier orchards, and growing demand for locally grown organic apples.`
   },
   {
     id: "protect-lake",
@@ -64,18 +72,17 @@ The initiative encouraged farmers to reduce chemical use and adopt environmental
     date: "February 28, 2025",
     category: "Tips",
     image: "https://images.unsplash.com/photo-1635341543888-251f045610ec?auto=format&fit=crop&q=80",
-    content: `Environmental organizations are encouraging residents and visitors to help protect Lake Prespa through small everyday actions.
+    content: `Environmental organizations are encouraging residents and visitors to help protect Lake Prespa through small everyday actions:
 
-Key actions to protect the lake include:
-* Reduce plastic use by using reusable bags and bottles.
-* Always throw trash in proper bins.
-* Use eco-friendly cleaning products.
-* Save water whenever possible.
-* Support local organic farmers.
-* Join community cleanup events.
-* Protect animals and natural habitats.
-* Teach others about environmental protection.
-* Travel responsibly and avoid littering.
-* Support local environmental projects and organizations.`
+1. Reduce plastic use by using reusable bags and bottles.
+2. Always throw trash in proper bins.
+3. Use eco-friendly cleaning products.
+4. Save water whenever possible.
+5. Support local organic farmers.
+6. Join community cleanup events.
+7. Protect animals and natural habitats.
+8. Teach others about environmental protection.
+9. Travel responsibly and avoid littering.
+10. Support local environmental projects.`
   }
 ];
