@@ -13,7 +13,6 @@ const Navbar = () => {
     { name: 'Activities', path: '/activities' },
     { name: 'Community', path: '/community' },
     { name: 'Art', path: '/art' },
-    { name: 'Library Hub', path: '/library' },
     { name: 'Guardians of Prespa', path: '/blog' },
     { name: 'Contact', path: '/contact' }
   ];
