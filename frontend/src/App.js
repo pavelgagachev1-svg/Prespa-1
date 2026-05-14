@@ -12,6 +12,7 @@ import Art from "@/pages/Art";
 import Library from "@/pages/Library";
 import Blog from "@/pages/Blog";
 import Contact from "@/pages/Contact";
+import StoryDetail from "@/pages/StoryDetail"; // <--- ADD THIS IMPORT
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
             <Route path="/art" element={<Art />} />
             <Route path="/library" element={<Library />} />
             <Route path="/blog" element={<Blog />} />
+            {/* ADD THIS NEW ROUTE BELOW TO FIX THE BLANK PAGE */}
+            <Route path="/blog/:id" element={<StoryDetail />} /> 
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
