@@ -165,7 +165,7 @@ export const blogPosts = [
     date: "March 5, 2025",
     category: "Event Reports",
     excerpt: "First-year organic farmers report successful harvests, proving sustainable methods can be both environmentally friendly and economically viable.",
-    image: "/images/image3.jpeg"
+    image: "/images/image4.jpeg"
   },
   {
     id: 4,
@@ -173,7 +173,7 @@ export const blogPosts = [
     date: "February 28, 2025",
     category: "Environmental Tips",
     excerpt: "Small actions make big impacts. Learn how you can contribute to preserving our precious lake ecosystem in your daily life.",
-    image: "/images/image4.jpeg"
+    image: "/images/image3.jpeg"
   }
 ];
 
