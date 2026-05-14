@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Globe, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Mail, Globe, MapPin, Facebook } from 'lucide-react';
 import { siteInfo } from '../data/mockData';
 
 const Footer = () => {
@@ -45,7 +45,9 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-1 flex-shrink-0 text-green-300" />
-                <span className="text-green-100">{siteInfo.contact.organization}<br />{siteInfo.contact.address}</span>
+                <span className="text-green-100">
+                  {siteInfo.contact.organization}<br />{siteInfo.contact.address}
+                </span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 flex-shrink-0 text-green-300" />
@@ -70,42 +72,27 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Social Media Section */}
+          {/* Social Media Section - ONLY FACEBOOK */}
           <div>
             <h4 className="font-semibold text-lg mb-4">Follow Us</h4>
             <div className="flex gap-4">
               <a 
-                href={siteInfo.social?.facebook || "https://facebook.com"} 
+                href={siteInfo.social?.facebook} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="bg-green-800 hover:bg-green-700 p-3 rounded-full transition-colors"
+                aria-label="Facebook Profile"
               >
                 <Facebook className="h-5 w-5" />
               </a>
-              <a 
-                href={siteInfo.social?.instagram || "https://instagram.com"} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-green-800 hover:bg-green-700 p-3 rounded-full transition-colors"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a 
-                href={siteInfo.social?.twitter || "https://twitter.com"} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-green-800 hover:bg-green-700 p-3 rounded-full transition-colors"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
             </div>
             <p className="text-sm text-green-100 mt-4">
-              Join our community and stay updated with our latest initiatives.
+              Join our community and stay updated with our latest initiatives on Facebook.
             </p>
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Copyright Bar */}
         <div className="border-t border-green-800 mt-8 pt-8 text-center">
           <p className="text-sm text-green-200">
             © {new Date().getFullYear()} Pearl of Prespa. All rights reserved. | Empowering communities, protecting nature.
