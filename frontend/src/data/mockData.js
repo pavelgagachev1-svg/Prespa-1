@@ -214,7 +214,7 @@ export const libraryResources = [
     icon: "FileText"
   },
   {
-    id: 5,
+    id: 3,
     title: "Water Conservation Techniques",
     type: "Interactive Guide",
     description: "Practical methods for efficient water use in agriculture",
