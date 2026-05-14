@@ -8,7 +8,8 @@ const Footer = () => {
     <footer className="bg-gradient-to-b from-green-900 to-green-950 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* About */}
+          
+          {/* About Section */}
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img 
@@ -26,7 +27,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links Section */}
           <div>
             <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
@@ -38,7 +39,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact Section */}
           <div>
             <h4 className="font-semibold text-lg mb-4">Contact Us</h4>
             <ul className="space-y-3 text-sm">
@@ -48,28 +49,53 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 flex-shrink-0 text-green-300" />
-                <a href={`mailto:${siteInfo.contact.email}`} className="text-green-100 hover:text-white transition-colors">
+                <a 
+                  href={`mailto:${siteInfo.contact.email}`} 
+                  className="text-green-100 hover:text-white transition-colors"
+                >
                   {siteInfo.contact.email}
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <Globe className="h-4 w-4 flex-shrink-0 text-green-300" />
-                <span className="text-green-100">{siteInfo.contact.website}</span>
+                <a 
+                  href={`https://${siteInfo.contact.website}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-green-100 hover:text-white transition-colors"
+                >
+                  {siteInfo.contact.website}
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Social Media */}
+          {/* Social Media Section */}
           <div>
             <h4 className="font-semibold text-lg mb-4">Follow Us</h4>
             <div className="flex gap-4">
-              <a href="#" className="bg-green-800 hover:bg-green-700 p-3 rounded-full transition-colors">
+              <a 
+                href={siteInfo.social?.facebook || "https://facebook.com"} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="bg-green-800 hover:bg-green-700 p-3 rounded-full transition-colors"
+              >
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="bg-green-800 hover:bg-green-700 p-3 rounded-full transition-colors">
+              <a 
+                href={siteInfo.social?.instagram || "https://instagram.com"} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="bg-green-800 hover:bg-green-700 p-3 rounded-full transition-colors"
+              >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="bg-green-800 hover:bg-green-700 p-3 rounded-full transition-colors">
+              <a 
+                href={siteInfo.social?.twitter || "https://twitter.com"} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="bg-green-800 hover:bg-green-700 p-3 rounded-full transition-colors"
+              >
                 <Twitter className="h-5 w-5" />
               </a>
             </div>
@@ -79,6 +105,7 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Bottom Bar */}
         <div className="border-t border-green-800 mt-8 pt-8 text-center">
           <p className="text-sm text-green-200">
             © {new Date().getFullYear()} Pearl of Prespa. All rights reserved. | Empowering communities, protecting nature.
