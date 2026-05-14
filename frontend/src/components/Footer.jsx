@@ -1,75 +1,103 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Leaf, Facebook, Instagram, Twitter, Mail } from 'lucide-react';
+import { Mail, Globe, MapPin, Facebook } from 'lucide-react';
 import { siteInfo } from '../data/mockData';
 
 const Footer = () => {
   return (
-    <footer className="bg-green-950 text-green-50 pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+    <footer className="bg-gradient-to-b from-green-900 to-green-950 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
-          {/* Brand Column */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <Leaf className="h-6 w-6 text-green-400" />
-              <span className="font-bold text-xl tracking-wider uppercase">ECTER Bitola</span>
+          {/* About Section */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_regional-hub-1/artifacts/vt4twy86_Adobe%20Express%20-%20file.png" 
+                alt="Pearl of Prespa" 
+                className="h-12 w-12"
+              />
+              <div>
+                <h3 className="font-bold text-lg">{siteInfo.name}</h3>
+                <p className="text-xs text-green-200">Regional Hub</p>
+              </div>
             </div>
-            <p className="text-green-200/70 text-sm leading-relaxed">
-              Empowering the local community through sustainable action and environmental preservation in the Prespa region.
+            <p className="text-sm text-green-100 leading-relaxed">
+              {siteInfo.tagline}
             </p>
           </div>
 
-          {/* Quick Links Column */}
+          {/* Quick Links Section */}
           <div>
-            <h4 className="font-bold text-white mb-6 text-lg">Quick Links</h4>
-            <ul className="space-y-4 text-green-200/80">
-              <li><Link to="/" className="hover:text-green-400 transition-colors">Home</Link></li>
-              <li><Link to="/activities" className="hover:text-green-400 transition-colors">Activities</Link></li>
-              <li><Link to="/blog" className="hover:text-green-400 transition-colors">Guardians of Prespa</Link></li>
-              <li><Link to="/contact" className="hover:text-green-400 transition-colors">Contact</Link></li>
+            <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
+            <ul className="space-y-2 text-sm">
+              <li><Link to="/about" className="text-green-100 hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="/activities" className="text-green-100 hover:text-white transition-colors">Activities</Link></li>
+              <li><Link to="/community" className="text-green-100 hover:text-white transition-colors">Community</Link></li>
+              <li><Link to="/library" className="text-green-100 hover:text-white transition-colors">Library Hub</Link></li>
+              <li><Link to="/blog" className="text-green-100 hover:text-white transition-colors">Gradians of Prespa</Link></li>
             </ul>
           </div>
 
-          {/* Contact Column */}
+          {/* Contact Section */}
           <div>
-            <h4 className="font-bold text-white mb-6 text-lg">Contact Info</h4>
-            <ul className="space-y-4 text-green-200/80">
-              <li className="flex items-start gap-3">
-                <Mail size={18} className="text-green-400 mt-1" />
-                <span>{siteInfo.contact.email}</span>
+            <h4 className="font-semibold text-lg mb-4">Contact Us</h4>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 mt-1 flex-shrink-0 text-green-300" />
+                <span className="text-green-100">
+                  {siteInfo.contact.organization}<br />{siteInfo.contact.address}
+                </span>
               </li>
-              <li className="text-sm">
-                Bitola, Macedonia<br />
-                Brainster Academy Partner
+              
+              {/* Non-clickable Email Address */}
+              <li className="flex items-center gap-2">
+                <Mail className="h-4 w-4 flex-shrink-0 text-green-300" />
+                <span className="text-green-100">
+                  {siteInfo.contact.email}
+                </span>
+              </li>
+
+              {/* Clickable Website Link */}
+              <li className="flex items-center gap-2">
+                <Globe className="h-4 w-4 flex-shrink-0 text-green-300" />
+                <a 
+                  href={`https://${siteInfo.contact.website}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-green-100 hover:text-white transition-colors"
+                >
+                  {siteInfo.contact.website}
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Social Column */}
+          {/* Social Media Section */}
           <div>
-            <h4 className="font-bold text-white mb-6 text-lg">Follow Us</h4>
+            <h4 className="font-semibold text-lg mb-4">Follow Us</h4>
             <div className="flex gap-4">
-              <a href="#" className="bg-green-900 p-3 rounded-full hover:bg-green-700 transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="bg-green-900 p-3 rounded-full hover:bg-green-700 transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="bg-green-900 p-3 rounded-full hover:bg-green-700 transition-colors">
-                <Twitter size={20} />
+              <a 
+                href={siteInfo.social?.facebook} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="bg-green-800 hover:bg-green-700 p-3 rounded-full transition-colors"
+                aria-label="Follow us on Facebook"
+              >
+                <Facebook className="h-5 w-5" />
               </a>
             </div>
+            <p className="text-sm text-green-100 mt-4">
+              Join our community and stay updated with our latest initiatives on Facebook.
+            </p>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-green-900 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-sm text-green-500">
-          <p>© {new Date().getFullYear()} Prespa-1. All rights reserved.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-green-300">Privacy Policy</a>
-            <a href="#" className="hover:text-green-300">Terms of Service</a>
-          </div>
+        {/* Footer Bottom Bar */}
+        <div className="border-t border-green-800 mt-8 pt-8 text-center">
+          <p className="text-sm text-green-200">
+            © {new Date().getFullYear()} Pearl of Prespa. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
