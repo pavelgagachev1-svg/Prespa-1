@@ -24,28 +24,30 @@ The progress is largely connected to reduced pesticide use, community cleanup ca
     title: "Organic Apple Harvest Exceeds Expectations",
     date: "May 5, 2026",
     category: "Agriculture",
-    image: "https://images.unsplash.com/photo-1594236053912-70650965e6ea?auto=format&fit=crop&q=80",
-    content: `Organic apple farmers in the Prespa region are celebrating a highly successful harvest season after switching to sustainable farming methods.  Producers reported strong yields, healthier orchards, and growing demand for locally grown organic apples. 
+    // This link looks for the image in your GitHub repository
+    image: "https://raw.githubusercontent.com/pavelgagachev1-svg/Prespa-1/main/frontend/public/images/apple_harvest.jpg",
+    content: `Organic apple farmers in the Prespa region are celebrating a highly successful harvest season after switching to sustainable farming methods. Producers reported strong yields, healthier orchards, and growing demand for locally grown organic apples.
 
-The initiative encouraged farmers to reduce chemical use and adopt environmentally friendly agricultural practices.  Many participants say the project has improved both their production quality and long-term economic stability.  Local experts believe the success could inspire more farmers to transition toward sustainable agriculture in the future. `
+The initiative encouraged farmers to reduce chemical use and adopt environmentally friendly agricultural practices. Many participants say the project has improved both their production quality and long-term economic stability. Local experts believe the success could inspire more farmers to transition toward sustainable agriculture in the future.`
   },
   {
     id: "protect-lake",
     title: "10 Simple Ways to Protect Lake Prespa",
     date: "April 28, 2026",
     category: "Tips",
-    image: "https://images.unsplash.com/photo-1635341543888-251f045610ec?auto=format&fit=crop&q=80",
-    content: `Environmental organizations are encouraging residents and visitors to help protect Lake Prespa through small everyday actions.  Experts say reducing plastic waste, recycling, saving water, and supporting organic farming can all help preserve the lake’s fragile ecosystem.  Community cleanups, responsible tourism, and environmental education are also playing an important role in raising awareness across the region.  Conservation groups emphasize that protecting Prespa depends on collective effort and long-term responsibility from everyone in the community. 
+    // This link looks for the image in your GitHub repository
+    image: "https://raw.githubusercontent.com/pavelgagachev1-svg/Prespa-1/main/frontend/public/images/protect_lake.jpg",
+    content: `Environmental organizations are encouraging residents and visitors to help protect Lake Prespa through small everyday actions. Experts say reducing plastic waste, recycling, saving water, and supporting organic farming can all help preserve the lake’s fragile ecosystem. Community cleanups, responsible tourism, and environmental education are also playing an important role in raising awareness across the region. Conservation groups emphasize that protecting Prespa depends on collective effort and long-term responsibility from everyone in the community.
 
-• Reduce plastic use by using reusable bags and bottles. 
-• Always throw trash in proper bins. 
-• Use eco-friendly cleaning products. 
-• Save water whenever possible. 
-• Support local organic farmers. 
-• Join community cleanup events. 
-• Protect animals and natural habitats. 
-• Teach others about environmental protection. 
-• Travel responsibly and avoid littering. 
-• Support local environmental projects and organizations. `
+• Reduce plastic use by using reusable bags and bottles. [cite: 24]
+• Always throw trash in proper bins. [cite: 25]
+• Use eco-friendly cleaning products. [cite: 26]
+• Save water whenever possible. [cite: 27]
+• Support local organic farmers. [cite: 28]
+• Join community cleanup events. [cite: 29]
+• Protect animals and natural habitats. [cite: 30]
+• Teach others about environmental protection. [cite: 31]
+• Travel responsibly and avoid littering. [cite: 32]
+• Support local environmental projects and organizations. [cite: 33]`
   }
 ];
