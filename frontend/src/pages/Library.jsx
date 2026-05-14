@@ -5,8 +5,8 @@ import { FileText, Droplets, ArrowLeft } from 'lucide-react';
 const Library = () => {
   const [selectedDoc, setSelectedDoc] = useState(null);
 
-  // --- Document Viewer View ---
-  // We show this when a document is selected to give the reader a focused experience
+  // --- 1. Document Viewer View ---
+  // This shows ONLY the document content when a user clicks a resource
   if (selectedDoc) {
     return (
       <div className="min-h-screen bg-white p-8 max-w-4xl mx-auto">
@@ -30,47 +30,48 @@ const Library = () => {
     );
   }
 
-  // --- Main Library View (Hero + Grid) ---
+  // --- 2. Main Library View (Hero Section + Grid) ---
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Merged Hero Section */}
-      <section className="relative h-[400px] flex items-center justify-center overflow-hidden">
+      {/* HERO SECTION WITH BACKGROUND IMAGE */}
+      <section className="relative h-[450px] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: 'url(https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1920&h=800&fit=crop)',
           }}
         >
+          {/* Overlay Gradient */}
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/85 to-purple-900/85"></div>
         </div>
         
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
             Library Hub
           </h1>
-          <p className="text-xl text-indigo-100">
+          <p className="text-xl md:text-2xl text-indigo-100 font-light">
             Knowledge and resources for a sustainable future
           </p>
         </div>
       </section>
 
-      {/* Grid Content Section */}
-      <div className="py-16 px-4">
-        <div className="max-w-6xl mx-auto text-center mb-16">
+      {/* GRID SECTION */}
+      <div className="max-w-6xl mx-auto py-20 px-4">
+        <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Resource Library</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Explore our collection of research papers, agricultural guides, and interactive tools designed to help Prespa thrive.
+            Explore our collection of research papers, agricultural guides, and interactive tools.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {libraryResources.map((item) => (
             <div 
               key={item.id} 
-              className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-start hover:shadow-md transition-shadow cursor-pointer group"
+              className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-start hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer"
               onClick={() => setSelectedDoc(item)}
             >
-              <div className="bg-emerald-50 p-4 rounded-xl mb-6 group-hover:bg-emerald-100 transition-colors">
+              <div className="bg-emerald-50 p-4 rounded-xl mb-6">
                 {item.icon === 'FileText' ? (
                   <FileText className="text-emerald-600" /> 
                 ) : (
