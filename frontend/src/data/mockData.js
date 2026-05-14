@@ -8,24 +8,45 @@ export const siteInfo = {
 export const artGallery = [
   {
     id: 1,
-    title: "Lake Prespa at Dawn",
-    category: "Photography",
-    image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80",
-    description: "Capturing the morning mist over the tranquil waters of Lake Prespa."
+    title: "Lake Reflections",
+    artist: "Ana Stojanovic",
+    type: "Photography",
+    image: "/images/image1.jpeg"
   },
   {
     id: 2,
-    title: "Traditional Harvest",
-    category: "Painting",
-    image: "https://images.unsplash.com/photo-1594236053912-70650965e6ea?auto=format&fit=crop&q=80",
-    description: "A vibrant painting depicting the local apple harvest tradition."
+    title: "Mountain Majesty",
+    artist: "Dimitri Kostov",
+    type: "Photography",
+    image: "/images/image2.jpeg"
   },
   {
     id: 3,
-    title: "Pelican Colony",
-    category: "Photography",
-    image: "https://images.unsplash.com/photo-1635341543888-251f045610ec?auto=format&fit=crop&q=80",
-    description: "The unique wildlife that calls the Prespa region home."
+    title: "Apple Blossoms",
+    artist: "Local Youth Collective",
+    type: "Eco-Art",
+    image: "/images/image3.jpeg"
+  },
+  {
+    id: 4,
+    title: "Wetland Wonders",
+    artist: "Sofia Dimova",
+    type: "Photography",
+    image: "/images/image4.jpeg"
+  },
+  {
+    id: 5,
+    title: "Prespa Sunrise",
+    artist: "Nikola Petrovski",
+    type: "Photography",
+    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=600&fit=crop"
+  },
+  {
+    id: 6,
+    title: "Community Mosaic",
+    artist: "Workshop Participants",
+    type: "Eco-Art",
+    image: "https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=800&h=600&fit=crop"
   }
 ];
 export const communityStories = [];
