@@ -5,6 +5,70 @@ export const siteInfo = {
   contact: { organization: "ECTER Bitola", email: "ecterbt@gmail.com" },
   social: { facebook: "https://www.facebook.com/ECTER.Bitola" }
 };
+export const activities = [
+  {
+    id: 1,
+    title: "Eco-Agriculture Workshops",
+    description: "Learn sustainable farming practices that protect Lake Prespa while maintaining productive apple orchards. We teach organic methods, water conservation, and soil health.",
+    icon: "Sprout"
+  },
+  {
+    id: 2,
+    title: "Youth Programs",
+    description: "Engaging young people through environmental education, leadership training, and community projects that connect them to their heritage and homeland.",
+    icon: "Users"
+  },
+  {
+    id: 3,
+    title: "Art & Culture Events",
+    description: "Celebrating Prespa's diverse heritage through artistic expression, cultural festivals, and creative workshops that bring communities together.",
+    icon: "Palette"
+  },
+  {
+    id: 4,
+    title: "Lake Protection Actions",
+    description: "Direct conservation efforts including clean-up campaigns, biodiversity monitoring, and community awareness programs to protect the ancient Prespa lakes.",
+    icon: "Droplet"
+  },
+  {
+    id: 5,
+    title: "Library Programs",
+    description: "Access to learning materials, digital resources, and workshop recordings that empower community members with knowledge and skills.",
+    icon: "BookOpen"
+  }
+];
+
+export const communityStories = [
+  {
+    id: 1,
+    name: "Gjorgi Dimitrov",
+    role: "Apple Farmer",
+    quote: "Switching to organic methods not only improved my soil but gave me hope that my children might return to farm this land.",
+    image: "/images/image1.jpeg"
+  },
+  {
+    id: 2,
+    name: "Elena Petrova",
+    role: "Youth Leader",
+    quote: "Through these programs, I discovered my passion for environmental conservation and decided to stay in Prespa to make a difference.",
+    image: "/images/image2.jpeg"
+  },
+  {
+    id: 3,
+    name: "Ismail Ramadani",
+    role: "Elder & Storyteller",
+    quote: "I remember when the lake was fuller, the fish more abundant. Now I share these memories so youth understand what we must preserve.",
+    image: "/images/image3.jpeg"
+  },
+  {
+    id: 4,
+    name: "Marija Angelova",
+    role: "Women Entrepreneur",
+    quote: "Starting my eco-tourism business helped me create jobs for other women while showcasing Prespa's natural beauty to the world.",
+    image: "/images/image4.jpeg"
+  }
+];
+
 export const artGallery = [
   {
     id: 1,
@@ -49,11 +113,21 @@ export const artGallery = [
     image: "https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=800&h=600&fit=crop"
   }
 ];
-export const communityStories = [];
-export const libraryResources = [];
-export const poems = [];
-export const mission = "Empowering local people through sustainable practices.";
-export const activities = [];
+
+export const poems = [
+  {
+    id: 1,
+    title: "Whispers of Prespa",
+    author: "Anonymous Youth",
+    text: "In the mirror of ancient waters,\nMountains stand as silent guards,\nApple blossoms dance with daughters,\nOf a land that nature regards.\n\nWaves that carry stories old,\nOf communities diverse and bold,\nIn Prespa's embrace we hold,\nA future written, yet untold."
+  },
+  {
+    id: 2,
+    title: "Return to Roots",
+    author: "Elena M.",
+    text: "They said the youth would leave and never come back,\nBut in the soil, in the lake, in the mountain track,\nI found my purpose, my calling, my way,\nTo nurture this land where I choose to stay."
+  }
+];
 
 // FULL STORIES FROM YOUR WORD DOCUMENT
 export const blogPosts = [
