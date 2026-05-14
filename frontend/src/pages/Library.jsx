@@ -1,147 +1,84 @@
-import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
-import { FileText, Video, Archive, Droplets, Mic, Download } from 'lucide-react';
+import React, { useState } from 'react';
 import { libraryResources } from '../data/mockData';
+import { FileText, Droplets, Video, Archive, Mic, X, BookOpen } from 'lucide-react';
 
 const Library = () => {
-  const iconMap = {
-    FileText,
-    Video,
-    Archive,
-    Droplets,
-    Mic
+  const [selectedResource, setSelectedResource] = useState(null);
+
+  // Helper to choose the right icon
+  const getIcon = (iconName) => {
+    switch (iconName) {
+      case 'FileText': return <FileText className="w-8 h-8 text-emerald-600" />;
+      case 'Droplets': return <Droplets className="w-8 h-8 text-blue-600" />;
+      case 'Video': return <Video className="w-8 h-8 text-purple-600" />;
+      case 'Archive': return <Archive className="w-8 h-8 text-amber-600" />;
+      case 'Mic': return <Mic className="w-8 h-8 text-rose-600" />;
+      default: return <BookOpen className="w-8 h-8 text-emerald-600" />;
+    }
   };
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[400px] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1920&h=800&fit=crop)',
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/85 to-purple-900/85"></div>
+    <div className="min-h-screen bg-gray-50 py-12 px-4">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Resource Library</h1>
+          <p className="text-lg text-gray-600">Access our collection of guides, research, and community archives.</p>
         </div>
-        
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-            Library Hub
-          </h1>
-          <p className="text-xl text-indigo-100">
-            Knowledge and resources for a sustainable future
-          </p>
-        </div>
-      </section>
 
-      {/* Introduction */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Empowering Through Knowledge</h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            Our Library Hub provides access to learning materials, digital resources, and workshop recordings that empower community members with the knowledge and skills needed to protect our environment and build sustainable livelihoods.
-          </p>
-        </div>
-      </section>
-
-      {/* Resources Grid */}
-      <section className="py-20 bg-gradient-to-b from-indigo-50 to-purple-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Available Resources</h2>
-            <div className="w-24 h-1 bg-indigo-600 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Browse our collection of educational materials and recordings
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {libraryResources.map((resource, index) => {
-              const Icon = iconMap[resource.icon];
-              const colors = [
-                { bg: 'bg-indigo-100', icon: 'text-indigo-600', border: 'border-indigo-600', hover: 'group-hover:bg-indigo-600' },
-                { bg: 'bg-purple-100', icon: 'text-purple-600', border: 'border-purple-600', hover: 'group-hover:bg-purple-600' },
-                { bg: 'bg-blue-100', icon: 'text-blue-600', border: 'border-blue-600', hover: 'group-hover:bg-blue-600' },
-                { bg: 'bg-teal-100', icon: 'text-teal-600', border: 'border-teal-600', hover: 'group-hover:bg-teal-600' },
-                { bg: 'bg-green-100', icon: 'text-green-600', border: 'border-green-600', hover: 'group-hover:bg-green-600' },
-                { bg: 'bg-pink-100', icon: 'text-pink-600', border: 'border-pink-600', hover: 'group-hover:bg-pink-600' },
-              ];
-              const color = colors[index % colors.length];
-
-              return (
-                <Card key={resource.id} className={`group hover:shadow-2xl transition-all duration-300 border-t-4 ${color.border} cursor-pointer`}>
-                  <CardHeader>
-                    <div className={`${color.bg} w-16 h-16 rounded-lg flex items-center justify-center mb-4 ${color.hover} transition-colors`}>
-                      <Icon className={`h-8 w-8 ${color.icon} group-hover:text-white transition-colors`} />
-                    </div>
-                    <CardTitle className="text-xl">{resource.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm font-medium text-gray-500 mb-3">{resource.type}</p>
-                    <p className="text-gray-600 leading-relaxed mb-4">{resource.description}</p>
-                    <button className="flex items-center gap-2 text-indigo-600 font-medium hover:text-indigo-700 transition-colors">
-                      <Download className="h-4 w-4" />
-                      Access Resource
-                    </button>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Categories */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Resource Categories</h2>
-            <div className="w-24 h-1 bg-indigo-600 mx-auto mb-8"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-gradient-to-br from-green-100 to-green-200 rounded-lg p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
-              <div className="text-4xl mb-3">🌱</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Agriculture</h3>
-              <p className="text-sm text-gray-700">Sustainable farming guides</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {libraryResources.map((resource) => (
+            <div key={resource.id} className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+              <div className="mb-4">{getIcon(resource.icon)}</div>
+              <span className="text-xs font-semibold text-emerald-600 uppercase tracking-wider">{resource.type}</span>
+              <h3 className="text-xl font-bold text-gray-900 mt-2 mb-3">{resource.title}</h3>
+              <p className="text-gray-600 mb-6">{resource.description}</p>
+              <button 
+                onClick={() => setSelectedResource(resource)}
+                className="w-full bg-emerald-600 text-white py-2 rounded-lg font-semibold hover:bg-emerald-700 transition-colors"
+              >
+                Access Resource
+              </button>
             </div>
+          ))}
+        </div>
 
-            <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
-              <div className="text-4xl mb-3">💧</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Conservation</h3>
-              <p className="text-sm text-gray-700">Environmental protection</p>
-            </div>
+        {/* MODAL / POP-UP VIEWER */}
+        {selectedResource && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+            <div className="bg-white rounded-2xl w-full max-w-3xl max-h-[80vh] overflow-hidden flex flex-col shadow-2xl">
+              <div className="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                <h2 className="text-xl font-bold text-gray-800">{selectedResource.title}</h2>
+                <button 
+                  onClick={() => setSelectedResource(null)}
+                  className="p-2 hover:bg-gray-200 rounded-full transition-colors"
+                >
+                  <X className="w-6 h-6 text-gray-500" />
+                </button>
+              </div>
+              
+              <div className="p-8 overflow-y-auto bg-white">
+                <div className="prose max-w-none">
+                  {/* We use whitespace: pre-line to respect the line breaks in our content string */}
+                  <div style={{ whiteSpace: 'pre-line' }} className="text-gray-800 leading-relaxed font-serif text-lg">
+                    {selectedResource.content}
+                  </div>
+                </div>
+              </div>
 
-            <div className="bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
-              <div className="text-4xl mb-3">🎯</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Leadership</h3>
-              <p className="text-sm text-gray-700">Youth development programs</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-amber-100 to-amber-200 rounded-lg p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
-              <div className="text-4xl mb-3">🏛️</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Heritage</h3>
-              <p className="text-sm text-gray-700">Cultural preservation</p>
+              <div className="p-4 border-t border-gray-100 bg-gray-50 text-center">
+                <button 
+                  onClick={() => setSelectedResource(null)}
+                  className="px-6 py-2 bg-gray-200 text-gray-800 rounded-lg font-semibold hover:bg-gray-300 transition-colors"
+                >
+                  Close Document
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-indigo-600 to-purple-600">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Request Additional Resources
-          </h2>
-          <p className="text-xl text-indigo-100 mb-8 leading-relaxed">
-            Looking for specific information or materials? Let us know what resources would be most helpful for your learning and development.
-          </p>
-        </div>
-      </section>
+        )}
+      </div>
     </div>
   );
 };
 
 export default Library;
-
