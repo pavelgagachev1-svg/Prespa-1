@@ -5,7 +5,29 @@ export const siteInfo = {
   contact: { organization: "ECTER Bitola", email: "ecterbt@gmail.com" },
   social: { facebook: "https://www.facebook.com/ECTER.Bitola" }
 };
-export const artGallery = [];
+export const artGallery = [
+  {
+    id: 1,
+    title: "Lake Prespa at Dawn",
+    category: "Photography",
+    image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80",
+    description: "Capturing the morning mist over the tranquil waters of Lake Prespa."
+  },
+  {
+    id: 2,
+    title: "Traditional Harvest",
+    category: "Painting",
+    image: "https://images.unsplash.com/photo-1594236053912-70650965e6ea?auto=format&fit=crop&q=80",
+    description: "A vibrant painting depicting the local apple harvest tradition."
+  },
+  {
+    id: 3,
+    title: "Pelican Colony",
+    category: "Photography",
+    image: "https://images.unsplash.com/photo-1635341543888-251f045610ec?auto=format&fit=crop&q=80",
+    description: "The unique wildlife that calls the Prespa region home."
+  }
+];
 export const communityStories = [];
 export const libraryResources = [];
 export const poems = [];
