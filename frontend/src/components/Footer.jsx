@@ -49,15 +49,16 @@ const Footer = () => {
                   {siteInfo.contact.organization}<br />{siteInfo.contact.address}
                 </span>
               </li>
+              
+              {/* Non-clickable Email Address */}
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 flex-shrink-0 text-green-300" />
-                <a 
-                  href={`mailto:${siteInfo.contact.email}`} 
-                  className="text-green-100 hover:text-white transition-colors"
-                >
+                <span className="text-green-100">
                   {siteInfo.contact.email}
-                </a>
+                </span>
               </li>
+
+              {/* Clickable Website Link */}
               <li className="flex items-center gap-2">
                 <Globe className="h-4 w-4 flex-shrink-0 text-green-300" />
                 <a 
@@ -72,7 +73,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Social Media Section - ONLY FACEBOOK */}
+          {/* Social Media Section */}
           <div>
             <h4 className="font-semibold text-lg mb-4">Follow Us</h4>
             <div className="flex gap-4">
@@ -81,7 +82,7 @@ const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="bg-green-800 hover:bg-green-700 p-3 rounded-full transition-colors"
-                aria-label="Facebook Profile"
+                aria-label="Follow us on Facebook"
               >
                 <Facebook className="h-5 w-5" />
               </a>
@@ -92,10 +93,10 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright Bar */}
+        {/* Footer Bottom Bar */}
         <div className="border-t border-green-800 mt-8 pt-8 text-center">
           <p className="text-sm text-green-200">
-            © {new Date().getFullYear()} Pearl of Prespa. All rights reserved. | Empowering communities, protecting nature.
+            © {new Date().getFullYear()} Pearl of Prespa. All rights reserved.
           </p>
         </div>
       </div>
