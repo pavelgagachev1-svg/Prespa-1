@@ -8,6 +8,11 @@ export const siteInfo = {
     address: "Sotir Brbevski 35",
     website: "www.ecter.org",
     email: "ecterbt@gmail.com"
+  },
+  social: {
+    facebook: "https://www.facebook.com/ECTER.Bitola", // Update these with your actual URLs
+    instagram: "https://www.instagram.com/ecter_bitola",
+    twitter: "https://www.twitter.com/ecter_bitola"
   }
 };
 
