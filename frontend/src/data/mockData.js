@@ -214,33 +214,12 @@ export const libraryResources = [
     icon: "FileText"
   },
   {
-    id: 3,
-    title: "Youth Leadership Workshop Series",
-    type: "Video Course",
-    description: "Recorded sessions from our leadership development program",
-    icon: "Video"
-  },
-  {
-    id: 4,
-    title: "Traditional Crafts & Techniques",
-    type: "Digital Archive",
-    description: "Preserving cultural heritage through documented traditional methods",
-    icon: "Archive"
-  },
-  {
     id: 5,
     title: "Water Conservation Techniques",
     type: "Interactive Guide",
     description: "Practical methods for efficient water use in agriculture",
     icon: "Droplets"
   },
-  {
-    id: 6,
-    title: "Community Stories Collection",
-    type: "Audio Archive",
-    description: "Oral histories from elders preserving Prespa's diverse heritage",
-    icon: "Mic"
-  }
 ];
 
 // 8. PARTNERS
