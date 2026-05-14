@@ -1,89 +1,47 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import { Button } from './ui/button';
+import { Link } from 'react-router-dom';
+import { Menu, X, Leaf } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
-
-  const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Activities', path: '/activities' },
-    { name: 'Community', path: '/community' },
-    { name: 'Art', path: '/art' },
-    { name: 'Library Hub', path: '/library' },
-    { name: 'Gradians of Prespa', path: '/blog' },
-    { name: 'Contact', path: '/contact' }
-  ];
-
-  const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-white/95 backdrop-blur-sm shadow-md sticky top-0 z-50">
+    <nav className="fixed w-full z-50 top-0 bg-white/80 backdrop-blur-md border-b border-green-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between h-20 items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <img 
-              src="https://customer-assets.emergentagent.com/job_regional-hub-1/artifacts/vt4twy86_Adobe%20Express%20-%20file.png" 
-              alt="Pearl of Prespa Logo" 
-              className="h-14 w-14 transition-transform group-hover:scale-105"
-            />
-            <div className="hidden md:block">
-              <h1 className="text-xl font-bold text-green-800">Pearl of Prespa</h1>
-              <p className="text-xs text-green-600">Regional Hub</p>
-            </div>
+          <Link to="/" className="flex items-center gap-2 group">
+            <Leaf className="h-8 w-8 text-green-600 group-hover:rotate-12 transition-transform" />
+            <span className="font-bold text-2xl text-green-900 tracking-tight">Prespa-1</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                  isActive(link.path)
-                    ? 'text-green-700 bg-green-50'
-                    : 'text-gray-700 hover:text-green-700 hover:bg-green-50'
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+          <div className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="text-gray-600 hover:text-green-700 font-medium transition-colors">Home</Link>
+            <Link to="/activities" className="text-gray-600 hover:text-green-700 font-medium transition-colors">Activities</Link>
+            <Link to="/blog" className="text-gray-600 hover:text-green-700 font-medium transition-colors">Guardians of Prespa</Link>
+            <Link to="/contact" className="bg-green-700 text-white px-6 py-2.5 rounded-full font-bold hover:bg-green-800 transition-all shadow-md">
+              Contact Us
+            </Link>
           </div>
 
-          {/* Mobile menu button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="lg:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-green-900">
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation Menu */}
       {isOpen && (
-        <div className="lg:hidden bg-white border-t">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setIsOpen(false)}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                  isActive(link.path)
-                    ? 'text-green-700 bg-green-50'
-                    : 'text-gray-700 hover:text-green-700 hover:bg-green-50'
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+        <div className="md:hidden bg-white border-b border-green-100 animate-in slide-in-from-top duration-300">
+          <div className="px-4 pt-2 pb-6 space-y-2">
+            <Link to="/" onClick={() => setIsOpen(false)} className="block px-3 py-4 text-lg font-medium text-gray-700 border-b border-gray-50">Home</Link>
+            <Link to="/activities" onClick={() => setIsOpen(false)} className="block px-3 py-4 text-lg font-medium text-gray-700 border-b border-gray-50">Activities</Link>
+            <Link to="/blog" onClick={() => setIsOpen(false)} className="block px-3 py-4 text-lg font-medium text-gray-700 border-b border-gray-50">Guardians of Prespa</Link>
+            <Link to="/contact" onClick={() => setIsOpen(false)} className="block px-3 py-4 text-lg font-bold text-green-700">Contact Us</Link>
           </div>
         </div>
       )}
