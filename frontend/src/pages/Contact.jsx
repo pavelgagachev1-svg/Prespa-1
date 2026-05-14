@@ -49,10 +49,6 @@ const ContactSection = () => {
               <div>
                 <h4 className="font-bold text-gray-900">Visit Website</h4>
                 <p className="text-gray-600 mt-1">{siteInfo.contact.website}</p>
-                 href={`https://${siteInfo.contact.website}`} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-green-100 hover:text-white transition-colors"
               </div>
             </div>
 
