@@ -62,8 +62,9 @@ const GradiansOfPrespa = () => {
               </CardHeader>
 
               <CardContent className="pb-10">
+                {/* Fixed: Using post.content with line-clamp because excerpt doesn't exist */}
                 <p className="text-gray-600 mb-6 leading-relaxed line-clamp-3">
-                  {post.excerpt}
+                  {post.content}
                 </p>
                 <Link 
                   to={`/blog/${post.id}`}
@@ -75,8 +76,6 @@ const GradiansOfPrespa = () => {
             </Card>
           ))}
         </div>
-
-        {/* Note: The 'Stay Updated' section has been completely removed */}
       </div>
     </div>
   );
