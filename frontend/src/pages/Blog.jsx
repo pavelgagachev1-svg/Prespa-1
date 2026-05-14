@@ -70,10 +70,10 @@ const GuardiansOfPrespa = () => {
           ))}
         </div>
 
-        {/* Footer Note (Replacement for Subscribe) */}
+        {/* Bottom Decorative Note */}
         <div className="mt-20 pt-10 border-t border-gray-200 text-center">
           <p className="text-gray-400 text-sm uppercase tracking-widest font-semibold">
-            © {new Date().getFullYear()} ECTER Bitola - Documenting Change in Prespa
+            ECTER Bitola - Documenting Change in Prespa
           </p>
         </div>
       </div>
