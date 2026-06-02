@@ -68,7 +68,7 @@ const ContactSection = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
             
             <form 
-              action="https://formspree.io/f/mvzlnqbk" 
+              action="https://formspree.io/f/mjgznqbg" 
               method="POST" 
               className="space-y-5"
             >
